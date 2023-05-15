@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}  
+
+<div class="container">
+    <!--Django Model Form-->
+    <h2 class="my-4">Add a new Reservation</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+          {{reservation_form|crispy}}
+          <button class="btn btn-primary my-4" type="submit">Submit</button>
+    </form>
+    <!--Django Model-->
+    <h2 class="my-4">Movies</h2>
+    <div class="row">
+      {% for reservation in reservations %}
+      <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+        <div class="card h-100 p-4">
+          <h4>{{reservation.name}}</h4>
+          <p class="text-muted">{{reservation.start_datetime}}</p>
+          <p>{{reservation.comment}}</p>
+        </div>
+      </div>
+      {% empty %}
+      <p>No Reservations added.</p>
+      {% endfor %}
+    </div>
+  </div>
