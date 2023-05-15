@@ -7,7 +7,6 @@ class User(models.Model):
     class Meta:
         unique_together = ["first_name", "last_name", "phone_number", "email"]
 
-    name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)
