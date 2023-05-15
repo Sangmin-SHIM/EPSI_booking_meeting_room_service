@@ -1,1 +1,2 @@
-# EPSI_django_booking_meeting_room_service
+# EPSI_booking_meeting_room_service
+## Sylvain LABASSE
